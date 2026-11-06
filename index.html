@@ -3,24 +3,40 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Calculadora de Cuota de Autónomos por Ingresos Reales 2026 | CuotaAutonomos</title>
+  <title>Calculadora de Cuota de Autónomos por Ingresos Reales 2026 | CuotaAutónomos</title>
   <meta name="description" content="Simula tu cuota de autónomos según los 15 tramos oficiales del Real Decreto-ley 13/2022, calcula el resultado de la regularización anual y planifica tus costes con rigor.">
+  <meta name="enterprise-site-slug" content="cuotaautonomos">
   <link rel="canonical" href="https://sergiosanles2000.github.io/cuotaautonomos-app/index.html">
   
   <!-- Open Graph / Social Sharing -->
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://sergiosanles2000.github.io/cuotaautonomos-app/index.html">
-  <meta property="og:title" content="Calculadora de Cuota de Autónomos por Ingresos Reales 2026 | CuotaAutonomos">
+  <meta property="og:title" content="Calculadora de Cuota de Autónomos por Ingresos Reales 2026 | CuotaAutónomos">
   <meta property="og:description" content="Simula tu cuota de autónomos según los 15 tramos oficiales del Real Decreto-ley 13/2022, calcula el resultado de la regularización anual y planifica tus costes con rigor.">
-  <meta property="og:site_name" content="CuotaAutonomos">
+  <meta property="og:site_name" content="CuotaAutónomos">
   
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Calculadora de Cuota de Autónomos por Ingresos Reales 2026">
   <meta name="twitter:description" content="Simula tu cuota de autónomos según los 15 tramos oficiales del Real Decreto-ley 13/2022, calcula el resultado de la regularización anual y planifica tus costes con rigor.">
 
-  <!-- Google AdSense Tag placeholder (Ready to activate upon publisher approval) -->
-  <!-- <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-0000000000000000" crossorigin="anonymous"></script> -->
+  <!-- Google Consent Mode v2 (RGPD / ePrivacy: Default denied before explicit user action) -->
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('consent', 'default', {
+      'ad_storage': 'denied',
+      'ad_user_data': 'denied',
+      'ad_personalization': 'denied',
+      'analytics_storage': 'denied',
+      'wait_for_update': 500
+    });
+  </script>
+  <!-- Google Analytics 4 (gtag.js): Preparado para activacion via core/analytics_config.json o GA_MEASUREMENT_ID -->
+  <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script> -->
+
+  <!-- Google AdSense: Listo para activacion tras aprobacion de la cuenta -->
+  <!-- <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script> -->
 
   <link rel="stylesheet" href="style.css">
   
@@ -56,6 +72,14 @@
         "@type": "Answer",
         "text": "Para el tramo 1 de la tabla reducida (ingresos inferiores a 670 €/mes), la base mínima es de 653,59 € con una cuota mensual orientativa de 205,23 €."
       }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Cómo funciona la Tarifa Plana de 80 € para nuevos autónomos?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Permite cotizar pagando 80 €/mes durante los primeros 12 meses de alta inicial, ampliables a otros 12 meses si los rendimientos netos no superan el SMI."
+      }
     }
   ]
 }
@@ -67,8 +91,8 @@
   <header class="site-header">
     <div class="container header-inner">
       <a href="index.html" class="brand-logo">
-        <span>💼</span>
-        <span>CuotaAutonomos</span>
+        <span>📊</span>
+        <span>CuotaAutónomos</span>
         <span class="brand-badge">Laboral & Autónomos</span>
       </a>
       <ul class="nav-links">
@@ -85,10 +109,10 @@
   <!-- Main Content Area -->
   <main class="container" style="padding-top: 1.5rem; padding-bottom: 3rem;">
     
-        <div class="ad-slot-wrapper">
+        <div class="ad-slot-wrapper ad-slot-header-wrapper" role="region" aria-label="Espacio publicitario superior">
           <span class="ad-label">Publicidad</span>
           <div class="ad-slot ad-slot-leaderboard" data-slot="header-leaderboard">
-            <span>Espacio Publicitario Disponible &bull; Formato Leaderboard 728x90 / Responsive</span>
+            <span class="ad-placeholder-text">Espacio Publicitario Disponible &bull; Formato Leaderboard Responsivo 728x90 / 320x100</span>
           </div>
         </div>
         
@@ -211,7 +235,7 @@
           </div>
         </form>
 
-        <div style="display: flex; flex-direction: column; justify-content: center; padding: 1.5rem; background: var(--bg-surface-secondary); border-radius: var(--radius-md);">
+        <div style="display: flex; flex-direction: column; justify-content: center; padding: 1.5rem; background: var(--bg-subtle); border-radius: var(--radius-md);">
           <span style="font-size: 0.9rem; color: var(--text-muted); text-transform: uppercase;">Saldo de Regularización Estimado:</span>
           <span id="regBalance" style="font-size: 2.2rem; font-weight: 800; color: var(--primary); margin: 0.5rem 0;">--</span>
           <span id="regStatus" style="font-weight: 600; font-size: 1rem;">--</span>
@@ -219,8 +243,85 @@
       </div>
     </section>
 
+    
+    <!-- Commercial Affiliate Integration (CPL / CPA Non-Intrusive Partner Card) -->
+    <section class="affiliate-card" id="partners-recommendation" role="region" aria-label="Recomendación de servicios profesionales">
+      <div class="affiliate-header">
+        <span class="affiliate-badge">Software Facturación Verifactu & Gestoría Online</span>
+        <span class="affiliate-disclosure-badge">Colaboración Patrocinada</span>
+      </div>
+      <div class="affiliate-body">
+        <h3 class="affiliate-title">Automatiza tus Modelos 130, 303 y Ajusta tu Tramo TGSS sin Errores</h3>
+        <p class="affiliate-desc">Controla tus gastos deducibles en tiempo real, emite facturas homologadas con Verifactu (Ley Antifraude) y evita sorpresas en la regularización anual.</p>
+        
+        <div class="affiliate-partners">
+          <span class="affiliate-partners-label">Entidades colaboradoras:</span>
+          <div class="affiliate-partner-tags"><span class="partner-tag">Software Verifactu Homologado</span><span class="partner-tag">Gestorías Online RETA</span><span class="partner-tag">Banca sin Comisiones para Autónomos</span></div>
+        </div>
+        
+        <div class="affiliate-cta-box">
+          <a href="#autonomo-form" class="btn-affiliate" target="_blank" rel="sponsored nofollow noopener">
+            Probar Software + Gestoría Gratis 30 Días &rarr;
+          </a>
+          <span class="affiliate-cta-subtext">Adaptado al RDL 13/2022 y Factura Electrónica • Alta en RETA e IAE gratis incluida</span>
+        </div>
+      </div>
+      <div class="affiliate-footer">
+        <p class="affiliate-legal-note">Nota comercial: CuotaAutónomos es un simulador independiente y puede percibir compensación de proveedores de software fiscal recomendados.</p>
+      </div>
+    </section>
+    
+
+    <!-- Official 15 Brackets Table -->
+    <section class="card" style="margin-top: 2.5rem; margin-bottom: 3rem;">
+      <div class="card-header">
+        <h2 class="card-title">Tabla Oficial de los 15 Tramos de Cotización RETA (2025 - 2026)</h2>
+        <p class="card-subtitle">Horquillas de rendimientos netos mensuales, bases mínimas y máximas y cuota mínima orientativa (tipo 31,40%).</p>
+      </div>
+      <div class="table-responsive">
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Tramo</th>
+              <th>Rendimiento Neto Mensual</th>
+              <th>Base Mínima (€/mes)</th>
+              <th>Base Máxima (€/mes)</th>
+              <th>Cuota Mínima (31,40%)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td><strong>R1 (Reducida 1)</strong></td><td>&le; 670,00 €</td><td>653,59 €</td><td>718,94 €</td><td><strong>205,23 €</strong></td></tr>
+            <tr><td><strong>R2 (Reducida 2)</strong></td><td>670,01 € – 900,00 €</td><td>718,95 €</td><td>900,00 €</td><td><strong>225,75 €</strong></td></tr>
+            <tr><td><strong>R3 (Reducida 3)</strong></td><td>900,01 € – 1.166,70 €</td><td>849,67 €</td><td>1.166,70 €</td><td><strong>266,80 €</strong></td></tr>
+            <tr><td><strong>G1 (General 1)</strong></td><td>1.166,71 € – 1.300,00 €</td><td>950,98 €</td><td>1.300,00 €</td><td><strong>298,61 €</strong></td></tr>
+            <tr><td><strong>G2 (General 2)</strong></td><td>1.300,01 € – 1.500,00 €</td><td>960,78 €</td><td>1.500,00 €</td><td><strong>301,68 €</strong></td></tr>
+            <tr><td><strong>G3 (General 3)</strong></td><td>1.500,01 € – 1.700,00 €</td><td>960,78 €</td><td>1.700,00 €</td><td><strong>301,68 €</strong></td></tr>
+            <tr><td><strong>G4 (General 4)</strong></td><td>1.700,01 € – 1.850,00 €</td><td>1.143,79 €</td><td>1.850,00 €</td><td><strong>359,15 €</strong></td></tr>
+            <tr><td><strong>G5 (General 5)</strong></td><td>1.850,01 € – 2.030,00 €</td><td>1.209,15 €</td><td>2.030,00 €</td><td><strong>379,67 €</strong></td></tr>
+            <tr><td><strong>G6 (General 6)</strong></td><td>2.030,01 € – 2.330,00 €</td><td>1.274,51 €</td><td>2.330,00 €</td><td><strong>400,20 €</strong></td></tr>
+            <tr><td><strong>G7 (General 7)</strong></td><td>2.330,01 € – 2.760,00 €</td><td>1.356,21 €</td><td>2.760,00 €</td><td><strong>425,85 €</strong></td></tr>
+            <tr><td><strong>G8 (General 8)</strong></td><td>2.760,01 € – 3.190,00 €</td><td>1.437,91 €</td><td>3.190,00 €</td><td><strong>451,50 €</strong></td></tr>
+            <tr><td><strong>G9 (General 9)</strong></td><td>3.190,01 € – 3.620,00 €</td><td>1.519,61 €</td><td>3.620,00 €</td><td><strong>477,16 €</strong></td></tr>
+            <tr><td><strong>G10 (General 10)</strong></td><td>3.620,01 € – 4.050,00 €</td><td>1.601,31 €</td><td>4.050,00 €</td><td><strong>502,81 €</strong></td></tr>
+            <tr><td><strong>G11 (General 11)</strong></td><td>4.050,01 € – 6.000,00 €</td><td>1.732,03 €</td><td>4.720,50 €</td><td><strong>543,86 €</strong></td></tr>
+            <tr><td><strong>G12 (General 12)</strong></td><td>&gt; 6.000,00 €</td><td>1.928,10 €</td><td>4.720,50 €</td><td><strong>605,42 €</strong></td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="context-crosslink-card">
+        <div class="context-crosslink-content">
+          <strong>💼 ¿Quieres comparar tu rendimiento como autónomo con un Sueldo Neto en Régimen General o pedir Hipoteca?</strong>
+          <p>Compara tu fiscalidad con un contrato asalariado o simula tu cuota hipotecaria máxima acreditando tus modelos 130 y Renta IRPF.</p>
+        </div>
+        <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
+          <a href="https://sergiosanles2000.github.io/calcula-tu-salario/" class="context-crosslink-btn">Comparar con Sueldo Neto &rarr;</a>
+          <a href="https://sergiosanles2000.github.io/hipotecalia-app/" class="context-crosslink-btn" style="background: var(--text-main);">Simular Hipoteca para Autónomos &rarr;</a>
+        </div>
+      </div>
+    </section>
+
     <!-- Editorial Guide & FAQ -->
-    <section class="editorial-guide" id="editorial-guide" style="margin-top: 3rem;">
+    <article class="editorial-section" id="editorial-guide" style="margin-top: 3rem;">
       <h2>Guía Completa: Cómo Funciona el Sistema de Cuotas por Ingresos Reales</h2>
       <p>Desde el 1 de enero de 2023, los trabajadores por cuenta propia en España cotizan a la Seguridad Social según sus rendimientos netos reales, regulado por el Real Decreto-ley 13/2022. Este sistema sustituyó la libre elección de base por una asignación obligatoria en 15 tramos anuales.</p>
 
@@ -237,6 +338,40 @@
         <li>1 de septiembre a 31 de octubre (efectos desde el 1 de noviembre).</li>
         <li>1 de noviembre a 31 de diciembre (efectos desde el 1 de enero del año siguiente).</li>
       </ul>
+    </article>
+
+    <!-- FAQ Section -->
+    <section class="editorial-section">
+      <h2>Preguntas Frecuentes sobre la Cuota de Autónomos (FAQ)</h2>
+      <div class="faq-list">
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>¿Qué ocurre si mis ingresos reales son distintos a los estimados?</span>
+            <span>+</span>
+          </button>
+          <div class="faq-answer">
+            <p>La Seguridad Social cruza datos anualmente con la Agencia Tributaria tras finalizar la campaña de la Renta. Si cotizaste por debajo de tu tramo real, deberás ingresar la diferencia antes del último día del mes siguiente a la notificación (sin intereses ni recargos). Si cotizaste por encima del máximo de tu tramo, la TGSS te devolverá el exceso de oficio antes del 30 de abril del ejercicio siguiente.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>¿Cómo funciona la Tarifa Plana de 80 € durante el primer y segundo año?</span>
+            <span>+</span>
+          </button>
+          <div class="faq-answer">
+            <p>Los nuevos autónomos que no hayan estado de alta en los 2 años anteriores (3 años si disfrutaron previamente de bonificación) pagan una cuota reducida de <strong>80 €/mes durante los primeros 12 meses</strong>. Es prorrogable otros 12 meses adicionales siempre que los rendimientos netos anuales se mantengan por debajo del Salario Mínimo Interprofesional (SMI).</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>¿Las cuotas de autónomos siguen siendo gasto fiscalmente deducible en el IRPF?</span>
+            <span>+</span>
+          </button>
+          <div class="faq-answer">
+            <p>Sí, el 100% de las cuotas abonadas al RETA es gasto deducible en el IRPF (Modelo 130 y Declaración anual). Solamente se vuelven a sumar de forma instrumental cuando la TGSS calcula tu base de cotización para determinar tu tramo de Seguridad Social.</p>
+          </div>
+        </div>
+      </div>
     </section>
     
   </main>
@@ -244,11 +379,71 @@
   <!-- Site Footer -->
   <footer class="site-footer">
     <div class="container">
+      
+      <!-- Strategic Cross-Linking Network (Ecosistema de Herramientas Gratuitas) -->
+      <div class="footer-network" role="navigation" aria-label="Red de calculadoras especializadas">
+        <div class="footer-network-header">
+          <div class="footer-network-title">🌐 Ecosistema Digital de Calculadoras y Simuladores Oficiales</div>
+          <p class="footer-network-subtitle">Herramientas financieras, laborales, fiscales y de salud de acceso libre y cálculo instantáneo en tu navegador.</p>
+        </div>
+        <div class="network-grid">
+          <a href="https://sergiosanles2000.github.io/hipotecalia-app/" class="network-card" title="Hipotecalia - Simulador de hipotecas, cuadro de amortización francés y gastos de compraventa.">
+            <div>
+              <div class="network-card-top">
+                <span class="network-card-brand"><span>🏠</span> Hipotecalia</span>
+                <span class="network-card-tag">Inmobiliario</span>
+              </div>
+              <p class="network-card-desc">Simulador de hipotecas, cuadro de amortización francés y gastos de compraventa.</p>
+            </div>
+            <span class="network-card-action">Abrir calculadora &rarr;</span>
+          </a>
+          <a href="https://sergiosanles2000.github.io/calcula-tu-salario/" class="network-card" title="CalculaTuSalario - Calculadora de sueldo bruto a neto en 12/14 pagas, tramos IRPF 2026 y coste empresa.">
+            <div>
+              <div class="network-card-top">
+                <span class="network-card-brand"><span>💼</span> CalculaTuSalario</span>
+                <span class="network-card-tag">Nóminas & IRPF</span>
+              </div>
+              <p class="network-card-desc">Calculadora de sueldo bruto a neto en 12/14 pagas, tramos IRPF 2026 y coste empresa.</p>
+            </div>
+            <span class="network-card-action">Abrir calculadora &rarr;</span>
+          </a>
+          <a href="https://sergiosanles2000.github.io/indemnicalc-app/" class="network-card" title="IndemniCalc - Cálculo legal de indemnización por despido, salario diario oficial y liquidación de finiquito.">
+            <div>
+              <div class="network-card-top">
+                <span class="network-card-brand"><span>⚖️</span> IndemniCalc</span>
+                <span class="network-card-tag">Derecho Laboral</span>
+              </div>
+              <p class="network-card-desc">Cálculo legal de indemnización por despido, salario diario oficial y liquidación de finiquito.</p>
+            </div>
+            <span class="network-card-action">Abrir calculadora &rarr;</span>
+          </a>
+          <a href="index.html" class="network-card is-current" title="CuotaAutónomos - Simulador oficial de cuotas por ingresos reales (RDL 13/2022) y regularización TGSS.">
+            <div>
+              <div class="network-card-top">
+                <span class="network-card-brand"><span>📊</span> CuotaAutónomos</span>
+                <span class="network-card-tag">Portal Actual</span>
+              </div>
+              <p class="network-card-desc">Simulador oficial de cuotas por ingresos reales (RDL 13/2022) y regularización TGSS.</p>
+            </div>
+            <span class="network-card-action">Estás aquí</span>
+          </a>
+          <a href="https://sergiosanles2000.github.io/macronutri-calc/" class="network-card" title="MacroNutri - Calculadora científica de gasto calórico TDEE, déficit energético y reparto de macronutrientes.">
+            <div>
+              <div class="network-card-top">
+                <span class="network-card-brand"><span>🥗</span> MacroNutri</span>
+                <span class="network-card-tag">Salud & Ciencia</span>
+              </div>
+              <p class="network-card-desc">Calculadora científica de gasto calórico TDEE, déficit energético y reparto de macronutrientes.</p>
+            </div>
+            <span class="network-card-action">Abrir calculadora &rarr;</span>
+          </a>
+        </div>
+      </div>
       <div class="footer-grid">
         <div class="footer-col">
-          <h4>CuotaAutonomos</h4>
+          <h4>CuotaAutónomos</h4>
           <p style="font-size: 0.9rem; margin-bottom: 1rem;">Calculadora orientativa de cuota de autónomos e ingresos reales (RDL 13/2022).</p>
-          <p class="form-help">&copy; 2026 CuotaAutonomos. Todos los derechos reservados.</p>
+          <p class="form-help">&copy; 2026 CuotaAutónomos. Todos los derechos reservados.</p>
         </div>
         <div class="footer-col">
           <h4>Herramientas</h4>
@@ -282,6 +477,21 @@
       <button id="cookie-reject" class="btn-cookie">Rechazar no esenciales</button>
     </div>
   </div>
+
+  
+  <!-- Sticky Bottom Anchor Ad (Better Ads Standards: dismissible, height < 30% viewport) -->
+  <div id="sticky-bottom-ad" class="ad-sticky-container" role="region" aria-label="Anuncio fijo inferior" style="display: none;">
+    <div class="ad-sticky-inner">
+      <div class="ad-sticky-header">
+        <span class="ad-label">Publicidad</span>
+        <button id="close-sticky-ad" class="ad-sticky-close" aria-label="Cerrar anuncio">&times;</button>
+      </div>
+      <div class="ad-slot ad-slot-sticky" data-slot="sticky-anchor">
+        <span class="ad-placeholder-text">Anuncio Fijo Inferior &bull; Formato Anchor Responsivo</span>
+      </div>
+    </div>
+  </div>
+        
 
   <script src="common.js"></script>
   <script src="app.js"></script>
