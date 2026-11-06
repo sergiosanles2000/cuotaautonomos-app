@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculadora de Cuota de Autónomos por Ingresos Reales 2026 | CuotaAutonomos</title>
+  <meta name="description" content="Simula tu cuota de autónomos según los 15 tramos oficiales del Real Decreto-ley 13/2022, calcula el resultado de la regularización anual y planifica tus costes con rigor.">
+  <link rel="canonical" href="https://sergiosanles2000.github.io/cuotaautonomos-app/index.html">
+  
+  <!-- Open Graph / Social Sharing -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://sergiosanles2000.github.io/cuotaautonomos-app/index.html">
+  <meta property="og:title" content="Calculadora de Cuota de Autónomos por Ingresos Reales 2026 | CuotaAutonomos">
+  <meta property="og:description" content="Simula tu cuota de autónomos según los 15 tramos oficiales del Real Decreto-ley 13/2022, calcula el resultado de la regularización anual y planifica tus costes con rigor.">
+  <meta property="og:site_name" content="CuotaAutonomos">
+  
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Calculadora de Cuota de Autónomos por Ingresos Reales 2026">
+  <meta name="twitter:description" content="Simula tu cuota de autónomos según los 15 tramos oficiales del Real Decreto-ley 13/2022, calcula el resultado de la regularización anual y planifica tus costes con rigor.">
+
+  <!-- Google AdSense Tag placeholder (Ready to activate upon publisher approval) -->
+  <!-- <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-0000000000000000" crossorigin="anonymous"></script> -->
+
+  <link rel="stylesheet" href="style.css">
+  
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Calculadora de Cuota de Autónomos",
+  "applicationCategory": "FinanceApplication",
+  "operatingSystem": "All",
+  "browserRequirements": "Requires JavaScript. Requires HTML5.",
+  "url": "https://sergiosanles2000.github.io/cuotaautonomos-app",
+  "description": "Calculadora orientativa de cuota de autónomos según los 15 tramos de rendimientos netos del RDL 13/2022 y simulador de regularización de la TGSS."
+}
+  </script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "¿Qué ocurre si mis ingresos reales son distintos a los estimados?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "La Seguridad Social cruza datos anualmente con la Agencia Tributaria. Si cotizaste por debajo de tu tramo real, deberás abonar la diferencia sin recargo; si cotizaste por encima, la TGSS te devolverá el exceso de oficio."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Cuál es la cuota mínima de autónomos en 2026?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Para el tramo 1 de la tabla reducida (ingresos inferiores a 670 €/mes), la base mínima es de 653,59 € con una cuota mensual orientativa de 205,23 €."
+      }
+    }
+  ]
+}
+  </script>
+</head>
+<body>
+
+  <!-- Site Navigation -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="brand-logo">
+        <span>💼</span>
+        <span>CuotaAutonomos</span>
+        <span class="brand-badge">Laboral & Autónomos</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="#autonomo-form">Simulador Cuota</a></li><li><a href="#reg-form">Regularización TGSS</a></li><li><a href="#editorial-guide">Guía Tramos</a></li>
+        <li>
+          <button id="theme-toggle" class="theme-toggle-btn" aria-label="Cambiar tema de color">
+            🌓 Tema
+          </button>
+        </li>
+      </ul>
+    </div>
+  </header>
+
+  <!-- Main Content Area -->
+  <main class="container" style="padding-top: 1.5rem; padding-bottom: 3rem;">
+    
+        <div class="ad-slot-wrapper">
+          <span class="ad-label">Publicidad</span>
+          <div class="ad-slot ad-slot-leaderboard" data-slot="header-leaderboard">
+            <span>Espacio Publicitario Disponible &bull; Formato Leaderboard 728x90 / Responsive</span>
+          </div>
+        </div>
+        
+    
+    <!-- Hero Header -->
+    <section class="hero">
+      <span class="hero-badge">Normativa Oficial Real Decreto-ley 13/2022</span>
+      <h1>Calculadora de Cuota de Autónomos por Ingresos Reales (2024 - 2026)</h1>
+      <p>Simula tu tramo de cotización a la Seguridad Social según tus rendimientos netos reales, calcula la cuota mensual orientativa y anticipa el resultado de la regularización anual de la TGSS.</p>
+    </section>
+
+    <!-- Main Tool Grid -->
+    <div class="app-grid">
+      <!-- Calculator Inputs -->
+      <div class="card">
+        <div class="card-header">
+          <h2 class="card-title">1. Datos Económicos y de Actividad</h2>
+          <p class="card-subtitle">Introduce tu facturación estimada y gastos deducibles para determinar tu tramo.</p>
+        </div>
+        
+        <form id="autonomo-form" onsubmit="event.preventDefault();">
+          <div class="form-group">
+            <label for="annualIncome">Facturación Bruta Anual (sin IVA) (€)</label>
+            <input type="number" id="annualIncome" class="form-control" value="32000" min="0" step="500" required>
+            <span class="help-text">Total de ingresos computables en el ejercicio fiscal.</span>
+          </div>
+
+          <div class="form-group">
+            <label for="annualExpenses">Gastos Deducibles de Actividad (€)</label>
+            <input type="number" id="annualExpenses" class="form-control" value="8000" min="0" step="100" required>
+            <span class="help-text">Alquileres, suministros, cuotas de software, compras profesionales.</span>
+          </div>
+
+          <div class="form-group">
+            <label for="annualSS">Cuotas de Autónomos Pagadas en el Año (€)</label>
+            <input type="number" id="annualSS" class="form-control" value="3600" min="0" step="50" required>
+            <span class="help-text">La Seguridad Social suma las cuotas para calcular el rendimiento previo.</span>
+          </div>
+
+          <div class="form-group">
+            <label for="workerType">Tipo de Autónomo</label>
+            <select id="workerType" class="form-control">
+              <option value="individual" selected>Autónomo Persona Física (Deducción 7% genérica)</option>
+              <option value="corporate">Autónomo Societario / Colaborador (Deducción 3%)</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="calcYear">Ejercicio de Aplicación</label>
+            <select id="calcYear" class="form-control">
+              <option value="2026" selected>2026 (Tablas vigentes / MEI 0.8%)</option>
+              <option value="2025">2025 (Tablas vigentes / MEI 0.8%)</option>
+              <option value="2024">2024 (Tablas anteriores / MEI 0.7%)</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label class="checkbox-container">
+              <input type="checkbox" id="flatRate">
+              <span class="checkbox-label">Tengo derecho a Tarifa Plana (80 €/mes primeros 12 meses)</span>
+            </label>
+          </div>
+        </form>
+      </div>
+
+      <!-- Live Results Summary -->
+      <div class="card card-results">
+        <div class="card-header">
+          <h2 class="card-title">2. Resultado de Cotización</h2>
+          <p class="card-subtitle">Desglose de tramo, bases oficiales y cuota mensual aplicable.</p>
+        </div>
+
+        <div class="kpi-grid">
+          <div class="kpi-card">
+            <span class="kpi-label">Cuota Mensual Mínima</span>
+            <span class="kpi-value highlight" id="resMonthlyQuota">--</span>
+          </div>
+          <div class="kpi-card">
+            <span class="kpi-label">Coste Anual en Cuotas</span>
+            <span class="kpi-value" id="resAnnualQuota">--</span>
+          </div>
+          <div class="kpi-card">
+            <span class="kpi-label">Tramo Asignado</span>
+            <span class="kpi-value" id="resBracketCode" style="font-size: 1.1rem;">--</span>
+          </div>
+          <div class="kpi-card">
+            <span class="kpi-label">Rendimiento Neto Mensual</span>
+            <span class="kpi-value" id="resMonthlyNet">--</span>
+          </div>
+        </div>
+
+        <div style="margin-top: 1.5rem; padding: 1rem; background: var(--bg-surface-secondary); border-radius: var(--radius-sm);">
+          <h4 style="margin-bottom: 0.5rem; font-size: 0.95rem;">Horquilla de Bases del Tramo:</h4>
+          <p style="font-size: 0.9rem; color: var(--text-muted); margin: 0.25rem 0;">
+            Base Mínima Legal: <strong id="resBaseMin">--</strong> &bull; Base Máxima Legal: <strong id="resBaseMax">--</strong>
+          </p>
+          <p style="font-size: 0.8rem; color: var(--text-muted); margin-top: 0.5rem;">
+            * Tipo de cotización general del 31,40% (incluye contingencias comunes 28,3%, profesionales 1,3%, cese 0,9%, FP 0,1% y MEI 0,8%).
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Regularization Tool Section -->
+    <section class="card" style="margin-top: 2rem;">
+      <div class="card-header">
+        <h2 class="card-title">Simulador de Regularización Anual de la TGSS</h2>
+        <p class="card-subtitle">Anticipa si deberás pagar una diferencia o si la Seguridad Social te devolverá cuotas tras cruzar datos con Hacienda.</p>
+      </div>
+
+      <div class="app-grid">
+        <form id="reg-form" onsubmit="event.preventDefault();">
+          <div class="form-group">
+            <label for="regProvisional">Cuota Mensual Provisional que has estado pagando (€)</label>
+            <input type="number" id="regProvisional" class="form-control" value="298" min="80" step="10">
+          </div>
+          <div class="form-group">
+            <label for="regRealNet">Rendimiento Neto Definitivo según tu Renta IRPF (€)</label>
+            <input type="number" id="regRealNet" class="form-control" value="26000" min="0" step="500">
+          </div>
+        </form>
+
+        <div style="display: flex; flex-direction: column; justify-content: center; padding: 1.5rem; background: var(--bg-surface-secondary); border-radius: var(--radius-md);">
+          <span style="font-size: 0.9rem; color: var(--text-muted); text-transform: uppercase;">Saldo de Regularización Estimado:</span>
+          <span id="regBalance" style="font-size: 2.2rem; font-weight: 800; color: var(--primary); margin: 0.5rem 0;">--</span>
+          <span id="regStatus" style="font-weight: 600; font-size: 1rem;">--</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Editorial Guide & FAQ -->
+    <section class="editorial-guide" id="editorial-guide" style="margin-top: 3rem;">
+      <h2>Guía Completa: Cómo Funciona el Sistema de Cuotas por Ingresos Reales</h2>
+      <p>Desde el 1 de enero de 2023, los trabajadores por cuenta propia en España cotizan a la Seguridad Social según sus rendimientos netos reales, regulado por el Real Decreto-ley 13/2022. Este sistema sustituyó la libre elección de base por una asignación obligatoria en 15 tramos anuales.</p>
+
+      <h3>1. Cómo se calculan los rendimientos netos computables</h3>
+      <p>La fórmula oficial no coincide exactamente con el rendimiento del modelo 130 de IRPF. La TGSS toma el rendimiento neto previo (Ingresos íntegros menos gastos deducibles), le suma el importe íntegro de las cuotas de autónomos abonadas a lo largo del año, y sobre ese resultado aplica una deducción genérica del <strong>7%</strong> (o del <strong>3%</strong> si eres autónomo societario o colaborador).</p>
+
+      <h3>2. Las 6 ventanas de cambio de base al año</h3>
+      <p>Los autónomos disponen de seis momentos durante el año para ajustar su base de cotización a la previsión real de ingresos en Import@ss:</p>
+      <ul>
+        <li>1 de enero a 28 de febrero (efectos desde el 1 de marzo).</li>
+        <li>1 de marzo a 30 de abril (efectos desde el 1 de mayo).</li>
+        <li>1 de mayo a 30 de junio (efectos desde el 1 de julio).</li>
+        <li>1 de julio a 31 de agosto (efectos desde el 1 de septiembre).</li>
+        <li>1 de septiembre a 31 de octubre (efectos desde el 1 de noviembre).</li>
+        <li>1 de noviembre a 31 de diciembre (efectos desde el 1 de enero del año siguiente).</li>
+      </ul>
+    </section>
+    
+  </main>
+
+  <!-- Site Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <h4>CuotaAutonomos</h4>
+          <p style="font-size: 0.9rem; margin-bottom: 1rem;">Calculadora orientativa de cuota de autónomos e ingresos reales (RDL 13/2022).</p>
+          <p class="form-help">&copy; 2026 CuotaAutonomos. Todos los derechos reservados.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Herramientas</h4>
+          <ul class="footer-links">
+            <li><a href="#autonomo-form">Simulador Cuota</a></li><li><a href="#reg-form">Regularización TGSS</a></li><li><a href="#editorial-guide">Guía Tramos</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Legal & Privacidad</h4>
+          <ul class="footer-links">
+            <li><a href="privacidad.html">Política de Privacidad</a></li>
+            <li><a href="terminos.html">Términos de Uso</a></li>
+            <li><a href="cookies.html">Política de Cookies</a></li>
+            <li><a href="aviso-legal.html">Aviso Legal (LSSI)</a></li>
+            <li><a href="contacto.html">Contacto y Soporte</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>Herramienta divulgativa independiente. Los resultados son estimaciones basadas en normativas públicas vigentes.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- GDPR / ePrivacy Cookie Consent Banner -->
+  <div id="cookie-banner" role="dialog" aria-modal="true" aria-labelledby="cookie-title">
+    <h4 id="cookie-title" style="margin-bottom: 0.5rem; font-size: 1rem;">Privacidad y Cookies</h4>
+    <p>Utilizamos cookies propias y de terceros para optimizar la experiencia de navegación, analizar el tráfico y personalizar la publicidad conforme a nuestras <a href="privacidad.html">políticas</a>.</p>
+    <div class="cookie-actions">
+      <button id="cookie-accept" class="btn-cookie btn-cookie-accept">Aceptar todas</button>
+      <button id="cookie-reject" class="btn-cookie">Rechazar no esenciales</button>
+    </div>
+  </div>
+
+  <script src="common.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
